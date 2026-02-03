@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Initial Drafts - AlanG Conversations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Avenir', 'Montserrat', 'Corbel', sans-serif; background: linear-gradient(90deg, #020024, #090979 35%, #00d4ff); color: #d6fff6; min-height: 100vh; line-height: 1.6; }
+        .container { display: flex; min-height: 100vh; }
+        .sidebar { width: 280px; background: linear-gradient(90deg, #2a7b9b, #57c785 79%); padding: 2rem 1.5rem; position: fixed; height: 100vh; z-index: 1000; transition: transform 0.3s ease; }
+        .sidebar h1 { font-family: 'Charter', serif; font-style: italic; font-size: 1.6rem; color: #433a3a; text-align: center; margin-bottom: 2rem; }
+        .nav-links { display: flex; flex-direction: column; gap: 0.6rem; }
+        .nav-links a { background-color: #c3abab; color: #551a8b; text-decoration: none; padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid #1c1ca6; font-size: 1.05rem; font-weight: 600; text-align: center; transition: all 0.3s ease; }
+        .nav-links a:hover { background-color: #d4bcbc; transform: translateX(4px); }
+        .menu-toggle { display: none; position: fixed; top: 1rem; left: 1rem; z-index: 1100; background: #488c51; border: none; width: 48px; height: 48px; border-radius: 8px; cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 5px; }
+        .menu-toggle span { display: block; width: 24px; height: 2px; background: white; transition: all 0.3s ease; border-radius: 2px; }
+        .menu-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+        .main-content { margin-left: 280px; width: calc(100% - 280px); padding: 3rem; }
+        .page-tagline { text-align: right; margin-bottom: 2rem; }
+        .page-tagline p { font-family: 'Superclarendon', serif; font-size: 0.95rem; font-weight: 600; color: #323c39; line-height: 1.2; display: inline-block; background: #578fa4; border-radius: 12px; padding: 0.5rem 1rem; }
+        .home-link { text-align: center; margin-bottom: 2rem; }
+        .home-link a { background-color: #4b8fa8; color: #551a8b; text-decoration: none; padding: 0.5rem 1.5rem; border-radius: 11px; font-size: 1rem; font-weight: 600; display: inline-block; transition: all 0.3s ease; }
+        .page-title { font-size: 2.2rem; text-align: center; color: #19ff91; margin-bottom: 2rem; font-weight: 600; }
+        .content { max-width: 900px; margin: 0 auto; }
+        .content p { font-size: 1.25rem; font-weight: 600; margin-bottom: 1.5rem; color: #d6fff6; text-align: justify; }
+        .emphasis { font-style: italic; color: #7af4da; margin-left: 4%; }
+        .external-link { color: #d5fef6; text-decoration: none; border-bottom: 1px solid #7af4da; }
+        @media (max-width: 768px) {
+            .sidebar { transform: translateX(-100%); }
+            .sidebar.mobile-visible { transform: translateX(0); }
+            .menu-toggle { display: flex; }
+            .main-content { margin-left: 0; width: 100%; padding: 5rem 1.5rem 2rem; }
+            .page-tagline { text-align: center; }
+            .page-tagline p { font-size: 0.8rem; }
+            .content p { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+    <button class="menu-toggle"><span></span><span></span><span></span></button>
+    <div class="container">
+        <aside class="sidebar" id="sidebar">
+            <h1>AlanG<br>Conversations</h1>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="sampleinitialdrafts.html">Sample Initial Drafts</a>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <div class="page-tagline"><p>Most of what you seek<br>.. is already within you<br><br>The most important answer<br>..is the next question</p></div>
+            <div class="home-link"><a href="index.html">Home</a></div>
+            <h1 class="page-title">Initial Drafts</h1>
+            <div class="content">
+                <p>Before there was AGC, there was InitialDrafts. These reflection prompting writings arose of the conversations Alan had with others over the years. Those conversations were early forms of the type of conversations experienced during the AGC event.</p>
+                <p>Initially on a site of its own, InitialDrafts will now be here. There are some 180 pieces being moved here over time.</p>
+                <p>The pieces are meant to..</p>
+                <p>InitialDrafts is presented as anonymous. The pieces are all written by Alan. However the focus and attention becomes on you. This is described as..</p>
+                <p class="emphasis"><strong><em>The Focus Is On The Reader, and the writer is getting out of the way.</em></strong></p>
+                <p>Note.. There is no correct interpretation. Use of the words "I" and "Me" are meant to be the reader experiencing those words. And each individual reader will have their own unique interpretation, which itself will likely develop and perhaps change over time.</p>
+            </div>
+        </main>
+    </div>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            sidebar.classList.toggle('mobile-visible');
+        });
+    </script>
+</body>
+</html>
