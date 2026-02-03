@@ -1,4 +1,4 @@
-name = "allang"
+name = "allang-website"
 compatibility_date = "2026-02-03"
 [assets]
 directory = "."
